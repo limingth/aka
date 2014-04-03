@@ -1,6 +1,7 @@
 <div class="container">
   <h1>来毛豆网，和最好的老师一对一学编程</h1>
   <hr>
+  <button id="toggle-video">切换视频显示窗口</button>
   <div class="web-video-container">
     <h3 class="header">一对一视频使用步骤</h3>
     <p>
@@ -24,3 +25,8 @@
       <iframe src="https://96.126.117.202:4200/" id="web-shell" name="web-shell" frameborder="1" width="720" height="540"></iframe>
     </div>
   </div>
+  <script>
+    $("#toggle-video").click(function(){
+       $(".web-video-container").slideToggle("slow");
+     });
+  </script>
