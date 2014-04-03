@@ -2,15 +2,17 @@
   <h1>来毛豆网，和最好的老师一对一学编程</h1>
   <hr>
   <button id="toggle-video">切换视频显示窗口</button>
-  <div class="web-video-container">
-    <h3 class="header">一对一视频使用步骤</h3>
-    <p>
-      <strong>注意:</strong> 测试一对一视频，必须用 chrome 浏览器
-    </p>
-    <p>
-      下载安装 Chrome 链接 <a href="http://www.google.com/intl/zh-CN/chrome/">http://www.google.com/intl/zh-CN/chrome/</a>
-    </p>
-    <iframe src="http://61.129.90.140:3001" id="web-video" name="web-video" frameborder="1"></iframe>
+  <div class="toggle-container">
+    <div class="web-video-container">
+      <h3 class="header">一对一视频使用步骤</h3>
+      <p>
+        <strong>注意:</strong> 测试一对一视频，必须用 chrome 浏览器
+      </p>
+      <p>
+        下载安装 Chrome 链接 <a href="http://www.google.com/intl/zh-CN/chrome/">http://www.google.com/intl/zh-CN/chrome/</a>
+      </p>
+      <iframe src="http://61.129.90.140:3001" id="web-video" name="web-video" frameborder="1"></iframe>
+    </div>
   </div>
   <div class="web-shell-container">
     <h3 class="header">结对编程使用步骤</h3>
@@ -29,7 +31,14 @@
     $(function() {
       $("#toggle-video").click(function(){
         var toggle_width = $(".web-shell-container").width() == 720 ? "100%" : "720px";
-        $(".web-video-container").animate({width: "toggle"});
+
+        if($(".web-video-container").css("display") == "block") {
+          $(".web-video-container").hide();
+        } else {
+          $(".web-video-container").show("slow");
+        }
+
+        $(".toggle-container").animate({width: "toggle"});
         $('.web-shell-container').animate({width: toggle_width});
       });
     });
