@@ -29,8 +29,8 @@
     $(function() {
       $("#toggle-video").click(function(){
         var toggle_width = $(".web-shell-container").width() == 720 ? "100%" : "720px";
-        $(".web-video-container").animate({width: "toggle"}, "slow");
-        $('.web-shell-container').animate({width: toggle_width}, "slow");
+        $(".web-video-container").animate({width: "toggle"});
+        $('.web-shell-container').animate({width: toggle_width});
       });
     });
   </script>
