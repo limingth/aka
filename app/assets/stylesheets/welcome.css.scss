@@ -10,10 +10,18 @@
 .web-shell-container {
   float: right;
   width: 720px;
-  }
+}
 #toggle-video {
   position: absolute;
   padding: 7px 12px;
   left: 350px;
   outline: none;
+}
+#web-video {
+  width: 360px;
+  height: 540px;
+}
+#web-shell {
+  width: 100%;
+  height: 540px;
 }

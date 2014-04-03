@@ -10,7 +10,7 @@
     <p>
       下载安装 Chrome 链接 <a href="http://www.google.com/intl/zh-CN/chrome/">http://www.google.com/intl/zh-CN/chrome/</a>
     </p>
-    <iframe src="http://61.129.90.140:3001" id="web-video" name="web-video" frameborder="1" width="360" height="540"></iframe>
+    <iframe src="http://61.129.90.140:3001" id="web-video" name="web-video" frameborder="1"></iframe>
   </div>
   <div class="web-shell-container">
     <h3 class="header">结对编程使用步骤</h3>
@@ -22,11 +22,15 @@
         (以上这一步，如果是单人自己测试需要做，如果是2人测试，则由第二个人做即可）</li>
         <li>此时可以看到，两个窗口同时可以对文件ls浏览以及用vi修改编译运行源码，这个时候双方就成功进入了结对编程（pair programming）模式。</li>
       </ol>
-      <iframe src="https://96.126.117.202:4200/" id="web-shell" name="web-shell" frameborder="1" width="720" height="540"></iframe>
+      <iframe src="https://96.126.117.202:4200/" id="web-shell" name="web-shell" frameborder="1"></iframe>
     </div>
   </div>
   <script>
-    $("#toggle-video").click(function(){
-       $(".web-video-container").slideToggle("slow");
-     });
+    $(function() {
+      $("#toggle-video").click(function(){
+        var toggle_width = $(".web-shell-container").width() == 720 ? "100%" : "720px";
+        $(".web-video-container").animate({width: "toggle"}, "slow");
+        $('.web-shell-container').animate({width: toggle_width}, "slow");
+      });
+    });
   </script>
