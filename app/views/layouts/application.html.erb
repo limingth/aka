@@ -1,13 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>毛豆网</title>
+  <title>毛豆网 - 和最好的老师一对一学编程</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+  <div id="header">
+    <div class="clearfix">
+      <h1 class="site-logo"><a href="/">毛豆网</a></h1>
+      <ul class="top-nav">
+        <li><a href="/try">试试手气</a></li>
+      </ul>
+    </div>
+  </div> <!-- end header -->
 <%= yield %>
 
 </body>
