@@ -32,28 +32,28 @@
       <li>$ 提示符后，输入 <strong>tmux</strong>后按回车键运行</li>
       <li>另外启动浏览器，登录另一个窗口，输入运行 <strong>tmux a</strong> 命令
         (以上这一步，如果是单人自己测试需要做，如果是2人测试，则由第二个人做即可）</li>
-        <li>此时可以看到，两个窗口同时可以对文件ls浏览以及用vi修改编译运行源码，这个时候双方就成功进入了结对编程（pair programming）模式。</li>
-      </ol>
-      <iframe src="http://pp2code.com:4200/" id="web-shell" name="web-shell" frameborder="1"></iframe>
-    </div>
+      <li>此时可以看到，两个窗口同时可以对文件ls浏览以及用vi修改编译运行源码，这个时候双方就成功进入了结对编程（pair programming）模式。</li>
+    </ol>
+    <iframe src="http://pp2code.com:4200/" id="web-shell" name="web-shell" frameborder="1"></iframe>
   </div>
-  <script>
-    $(function() {
-      $("#toggle-video").click(function(){
-        var toggle_width = $(".web-shell-container").width() == 720 ? "100%" : "720px";
+</div>
+<script>
+  $(function() {
+    $("#toggle-video").click(function(){
+      var toggle_width = $(".web-shell-container").width() == 720 ? "100%" : "720px";
 
-        if($(".web-video-container").css("display") == "block") {
-          $(".web-video-container").hide();
-        } else {
-          $(".web-video-container").show("slow");
-        }
+      if($(".web-video-container").css("display") == "block") {
+        $(".web-video-container").hide();
+      } else {
+        $(".web-video-container").show("slow");
+      }
 
-        $(".toggle-container").animate({width: "toggle"});
-        $('.web-shell-container').animate({width: toggle_width});
-      });
+      $(".toggle-container").animate({width: "toggle"});
+      $('.web-shell-container').animate({width: toggle_width});
     });
-  </script>
-    <script type="text/javascript">
+  });
+</script>
+<script type="text/javascript">
   var serverAddress = 'http://96.126.117.202:8095/webrtc';  // Please change it to signaling server's address.
   var p2p=new Woogeen.Peer({
     iceServers : [ {
@@ -113,4 +113,4 @@
   p2p.addEventListener('chat-started',function(e){  // Chat started
     console.log('Video chat is started.');
   });
-  </script>
+</script>
