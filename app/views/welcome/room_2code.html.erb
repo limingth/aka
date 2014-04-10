@@ -10,10 +10,6 @@
         或者通过<a href="http://115.com/lb/5lbdel83i86z" target=_blank>115网盘下载</a>(礼包码：5lbdel83i86z)
       </p>
       <div class="web-video">
-        <h4>请输入聊天室的名称然后点击“确认”按钮</h4>
-        <div id="control">
-         <p><input id="roomid" type="text" /><button id="connect">确认</button></p>
-       </div>
         <div id="local">
           <video width="192px" height="240px" id="localVideo" muted="muted" autoplay="autoplay"></video>
        </div>
@@ -77,9 +73,8 @@
     } ]
   });  // Initialize a Peer object
   // var roomToken=JSON.stringify({host:serverAddress, id:Utils.getQueryStrings()['roomId']});  // Tokens for join a room.
-  var roomId = $('#roomid').val();
+  var roomId = "2code";
   var roomToken=JSON.stringify({host:serverAddress, id:roomId});  // Tokens for join a room.
-  console.log(roomToken);
   var localStream = Woogeen.Stream({audio:true,video:true});  // It only initializes a Woogeen.Stream object. Using localStream.init() to initialize stream.
   localStream.addEventListener("access-accepted", function(evt){  // access-accepted event will be triggered when user accepted to use camera/microphone
     attachMediaStream($('#local video').get(0),localStream.stream)  // Show local stream
@@ -87,18 +82,9 @@
   });
 
   $(document).ready(function(){
-    $('#connect').click(function(){
-      var roomid = $('#roomid').val();
-      var roomToken=JSON.stringify({host:serverAddress, id:roomid});  // Tokens for join a room.
-      var localStream = Woogeen.Stream({audio:true,video:true});  // It only initializes a Woogeen.Stream object. Using localStream.init() to initialize stream.
-      localStream.addEventListener("access-accepted", function(evt){  // access-accepted event will be triggered when user accepted to use camera/microphone
-        attachMediaStream($('#local video').get(0),localStream.stream)  // Show local stream
-        p2p.joinRoom(roomToken,localStream);  // Join a chat room.
-      });
       p2p.connect(serverAddress,Utils.getQueryStrings()['uId']);  // Connect to peer server.
       localStream.init();  // Initialize local stream.
       //p2p.leaveRoom(roomToken);  // Quit current chat room.
-    });
   });
 
   p2p.addEventListener('stream-subscribed',function(e){  // A remote stream is available.
