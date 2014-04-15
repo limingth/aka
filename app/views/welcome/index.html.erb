@@ -1,35 +1,53 @@
-<div class="container">
-  <button id="toggle-video">切换视频显示窗口</button>
-  <div class="toggle-container">
-    <div class="web-video-container">
-      <h2 class="header">一对一视频</h2>
-      <p>
-        <strong>注意:</strong> 请使用chrome 浏览器测试, 可以通过
-        <a href="http://www.google.hk/intl/zh-CN/chrome/" target=_blank>官方站点下载</a>
-        或者通过<a href="http://115.com/lb/5lbdel83i86z" target=_blank>115网盘下载</a>(礼包码：5lbdel83i86z)
-      </p>
+<%= render 'room' %>
 
-      <iframe src="http://61.129.90.140:3001" id="web-video" name="web-video" frameborder="1"></iframe>
-    </div>
-  </div>
-  <div class="web-shell-container">
-    <h2 class="header">结对编程 </h2>
-      <iframe src="http://pp2code.com:4200/" id="web-shell" name="web-shell" frameborder="1"></iframe>
-    </div>
-  </div>
-  <script>
-    $(function() {
-      $("#toggle-video").click(function(){
-        var toggle_width = $(".web-shell-container").width() == 720 ? "100%" : "720px";
+<script type="text/javascript">
+  var serverAddress = 'http://96.126.117.202:8095/webrtc';  // Please change it to signaling server's address.
+  var p2p=new Woogeen.Peer({
+    iceServers : [ {
+      urls : "turn:61.129.90.140:4478?transport=udp",
+      credential : "master",
+      username : "woogeen"
+    }, {
+      urls : "turn:61.129.90.140:443?transport=udp",
+      credential : "master",
+      username : "woogeen"
+    }, {
+      urls : "turn:61.129.90.140:4478?transport=tcp",
+      credential : "master",
+      username : "woogeen"
+    }, {
+      urls : "turn:61.129.90.140:443?transport=tcp",
+      credential : "master",
+      username : "woogeen"
+    }, {
+      urls : "stun:61.129.90.140"
+    } ]
+  });  // Initialize a Peer object
+  // var roomToken=JSON.stringify({host:serverAddress, id:Utils.getQueryStrings()['roomId']});  // Tokens for join a room.
+  var roomId = "home";
+  var roomToken=JSON.stringify({host:serverAddress, id:roomId});  // Tokens for join a room.
+  var localStream = Woogeen.Stream({audio:true,video:true});  // It only initializes a Woogeen.Stream object. Using localStream.init() to initialize stream.
+  localStream.addEventListener("access-accepted", function(evt){  // access-accepted event will be triggered when user accepted to use camera/microphone
+    attachMediaStream($('#local video').get(0),localStream.stream)  // Show local stream
+    p2p.joinRoom(roomToken,localStream);  // Join a chat room.
+  });
 
-        if($(".web-video-container").css("display") == "block") {
-          $(".web-video-container").hide();
-        } else {
-          $(".web-video-container").show("slow");
-        }
+  $(document).ready(function(){
+      p2p.connect(serverAddress,Utils.getQueryStrings()['uId']);  // Connect to peer server.
+      localStream.init();  // Initialize local stream.
+      //p2p.leaveRoom(roomToken);  // Quit current chat room.
+  });
 
-        $(".toggle-container").animate({width: "toggle"});
-        $('.web-shell-container').animate({width: toggle_width});
-      });
-    });
-  </script>
+  p2p.addEventListener('stream-subscribed',function(e){  // A remote stream is available.
+    $('#remote video').show();
+    attachMediaStream($('#remote video').get(0),e.stream.stream);  // Show remote stream.
+  });
+
+  p2p.addEventListener('chat-stopped',function(e){  // Chat stopped
+    $('#remote video').hide();
+  });
+
+  p2p.addEventListener('chat-started',function(e){  // Chat started
+    console.log('Video chat is started.');
+  });
+</script>
