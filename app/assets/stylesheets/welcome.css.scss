@@ -84,14 +84,24 @@ div.clearfix {
   float: left;
 }
 
-#header ul.top-nav li a {
-  margin-left: 15px;
-  display: block;
-  height: 47px;
-  line-height: 46px;
-  color: #000;
-  font-weight: bold;
-  font-size: 13px;
+#header ul.top-nav li {
+  a, button {
+    margin-left: 15px;
+    display: block;
+    height: 47px;
+    line-height: 46px;
+    color: #000;
+    font-weight: bold;
+    font-size: 13px;
+  }
+}
+#header button {
+  border: 0;
+  background: none;
+  cursor: pointer;
+  &:focus {
+    outline: 0;
+  }
 }
 
 .web-video-container {
