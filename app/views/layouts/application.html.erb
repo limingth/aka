@@ -4,6 +4,11 @@
   <title>毛豆网 - 和最好的老师一对一学编程</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
+  <script>
+    var TogetherJSConfig = {
+      disableWebRTC: true
+    };
+  </script>
   <script src="https://togetherjs.com/togetherjs-min.js"></script>
   <%= csrf_meta_tags %>
 </head>
