@@ -3,12 +3,6 @@
 <head>
   <title>毛豆网 - 和最好的老师一对一学编程</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <script>
-    var TogetherJSConfig = {
-      disableWebRTC: true
-    };
-  </script>
   <script src="https://togetherjs.com/togetherjs-min.js"></script>
   <%= csrf_meta_tags %>
 </head>
@@ -21,11 +15,35 @@
         <li><a href="/room_2code">Room 2code</a></li>
         <li><a href="/try">试试手气</a></li>
         <li><button class="together-toggle" onclick="TogetherJS(this); return false;">乒乓</button></li>
-
       </ul>
     </div>
   </div> <!-- end header -->
-<%= yield %>
+  <div id="wrapper">
+    <%= content_for?(:content) ? yield(:content) : yield %>
+    <!-- Footer
+    ================================================== -->
+    <div id="footer-push"></div><!-- hack for sticky footer -->
+  </div><!-- end of wrapper - hack for sticky footer -->
+  <div id="footer">
+    <hr class="footer-divider">
+    <div class="container">
+      <dl class="footer_nav">
+        <dt><%= t('about_pp2code') %></dt>
+        <dd>QQ交流群:  235352162</dd>
+      </dl>
+    </div>
+    <hr class="footer-divider">
+    <p class="brand">© 2014 Pp2code Inc. All rights reserved.</p>
+  </div>
+  <!-- end of footer -->
 
+  <%= javascript_include_tag "application" %>
+  <%= yield :template_js %>
+
+  <script>
+    var TogetherJSConfig = {
+      disableWebRTC: true
+    };
+  </script>
 </body>
 </html>

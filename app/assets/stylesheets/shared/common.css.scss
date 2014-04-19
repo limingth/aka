@@ -1,0 +1,70 @@
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, ol, ul, li {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+body {
+  font: 14px "Microsoft YaHei",微软雅黑,"SimSun",Arial,Lucida Grande,Tahoma,sans-serif;
+  line-height: 1.4;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+h1, h2 {
+  font-size: 30px;
+  font-weight: 300;
+  color: #333;
+  margin: 10px 0;
+}
+
+a {
+  text-decoration: none;
+  color: #005580;
+  &:hover {
+    color: #08c;
+    text-decoration: underline;
+  }
+}
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 1px solid #DDD;
+}
+
+.container {
+  width: 1200px;
+  margin: 40px auto;
+  position: relative;;
+}
+
+.clearfix {
+  display: block;
+}
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+div.clearfix {
+  width: 1200px;
+  margin: 0 auto;
+}
