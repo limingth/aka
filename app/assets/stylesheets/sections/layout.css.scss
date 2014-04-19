@@ -12,6 +12,64 @@
   }
 }
 
+#header {
+  background-color: #FAFAFA;
+  background: -moz-linear-gradient(#fafafa, #eaeaea);
+  background: -webkit-linear-gradient(#FAFAFA, #EAEAEA);
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#fafafa', endColorstr='#eaeaea')";
+  position: relative;
+  z-index: 10;
+  border-bottom: 1px solid #CACACA;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4),0 0px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.site-logo {
+  float: left;
+  margin: 10px 0;
+}
+
+.site-logo a {
+  float: left;
+  color: #000;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+#header ul.top-nav {
+  position: relative;
+  float: right;
+}
+
+#header ul.top-nav li {
+  position: relative;
+  float: left;
+}
+
+#header a:hover {
+  text-decoration: none;
+}
+
+#header ul.top-nav li {
+  a, button {
+    margin-left: 15px;
+    display: block;
+    height: 47px;
+    line-height: 46px;
+    color: #000;
+    font-weight: bold;
+    font-size: 13px;
+  }
+}
+#header button {
+  border: 0;
+  background: none;
+  cursor: pointer;
+  &:focus {
+    outline: 0;
+  }
+}
+
 #footer {
   margin: 40px 0 0 0;
   padding-bottom: 50px;
