@@ -1,5 +1,6 @@
 <div class="container">
   <button id="toggle-video">切换视频显示窗口</button>
+  <p><input id="together-url" type="text" /><button id="refresh">确认</button></p>
   <div class="toggle-container">
     <div class="web-video-container">
       <h2 class="header">一对一视频</h2>
@@ -21,7 +22,7 @@
 
   <div class="web-shell-container">
     <h2 class="header">结对编程 </h2>
-    <iframe src="http://pp2code.com:4200/" id="web-shell" name="web-shell" frameborder="1"></iframe>
+    <iframe src="http://pp2code.com:6200/" id="web-shell" name="web-shell" frameborder="1"></iframe>
   </div>
 </div>
 <script>
@@ -37,6 +38,13 @@
 
       $(".toggle-container").animate({width: "toggle"});
       $('.web-shell-container').animate({width: toggle_width});
+    });
+
+    $("#refresh").click(function(){
+      var together_url = $('#together-url').val();
+      var iframe = $('#web-shell')[0];
+      iframe.src = together_url;
+      iframe.contentWindow.location.reload(true);
     });
   });
 </script>
