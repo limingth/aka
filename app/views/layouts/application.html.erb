@@ -26,22 +26,19 @@
   </div> <!-- end header -->
   <div id="wrapper">
     <%= content_for?(:content) ? yield(:content) : yield %>
-    <!-- Footer
-    ================================================== -->
-    <div id="footer-push"></div><!-- hack for sticky footer -->
+    <div id="footer-push"></div>
   </div><!-- end of wrapper - hack for sticky footer -->
-  <div id="footer">
-    <hr class="footer-divider">
-    <div class="container">
-      <dl class="footer_nav">
-        <dt><%= t('about_pp2code') %></dt>
-        <dd>QQ交流群:  235352162</dd>
-      </dl>
-    </div>
-    <hr class="footer-divider">
-    <p class="brand">© 2014 pp2code Inc. All rights reserved.</p>
+
+  <div class="container">
+    <div class="site-footer">
+      <ul class="site-footer-links right">
+        <li>QQ交流群:  235352162</li>
+      </ul>
+      <ul class="site-footer-links">
+        <li>© 2014 <span title="pp2code">pp2code</span>, Inc.</li>
+      </ul>
+    </div><!-- /.site-footer -->
   </div>
-  <!-- end of footer -->
 
   <%= yield :template_js %>
 

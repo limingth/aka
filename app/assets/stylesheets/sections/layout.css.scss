@@ -1,17 +1,3 @@
-/* sticky footer */
-
-#wrapper {
-  min-height:100%;
-  height:auto!important;
-  height:100%;
-  margin:0;
-  margin-bottom:-160px;
-  #footer-push {
-    height:160px;
-    clear:both;
-  }
-}
-
 #header {
   background-color: #FAFAFA;
   background: -moz-linear-gradient(#fafafa, #eaeaea);
@@ -62,6 +48,7 @@
     font-size: 13px;
   }
 }
+
 #header button {
   border: 0;
   background: none;
@@ -71,24 +58,46 @@
   }
 }
 
-#footer {
-  margin: 40px 0 0 0;
-  padding-bottom: 50px;
-  font-size: 14px;
-  line-height: 1.5;
-  .footer_nav {
-    float: left;
-    width: 220px;
-    dt {
-      font-weight: bold;
-    }
-    dd {
-      margin-left: 0;
-    }
+/* sticky footer */
+#wrapper {
+  min-height:100%;
+  margin-bottom:-30px;
+  height: auto !important;
+  height: 100%;
+  &:after {
+    content: "";
+    display: block;
   }
-  .brand { text-align: center; }
+  #footer-push {
+    height:10px;
+    clear:both;
+  }
 }
-.footer-divider {
-  margin: 0 0 20px;
-  border: 0;
+
+.site-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.site-footer, #wrapper:after{
+  height: 30px;
+}
+
+.site-footer-links.right {
+  float: right;
+}
+
+.site-footer-links {
+  float: left;
+  margin: 0;
+  list-style: none;
+}
+
+.right {
+  float: right;
+}
+
+.site-footer-links li {
+  display: inline-block;
+  line-height: 16px;
 }
