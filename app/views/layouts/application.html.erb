@@ -7,7 +7,6 @@
   <script>
     var TogetherJSConfig = {
       disableWebRTC: true,
-      enableShortcut: true,
       enableShortcut: true
     };
   </script>
@@ -15,29 +14,28 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div id="header">
-    <div class="clearfix">
-      <h1 class="site-logo"><a href="/">毛豆网 - 和最好的老师一对一学编程</a></h1>
-      <ul class="top-nav">
-        <li><a href="/try">毛豆实验室</a></li>
-        <li><button class="together-toggle" onclick="TogetherJS(this); return false;">一对一</button></li>
-      </ul>
-    </div>
-  </div> <!-- end header -->
   <div id="wrapper">
+    <div id="header">
+      <div class="clearfix">
+        <h1 class="site-logo"><a href="/">毛豆网 - 和最好的老师一对一学编程</a></h1>
+        <ul class="top-nav">
+          <li><a href="/try">毛豆实验室</a></li>
+          <li><button class="together-toggle" onclick="TogetherJS(this); return false;">一对一</button></li>
+        </ul>
+      </div>
+    </div> <!-- end header -->
     <%= content_for?(:content) ? yield(:content) : yield %>
-    <div id="footer-push"></div>
-  </div><!-- end of wrapper - hack for sticky footer -->
+  </div><!-- end of wrapper -->
 
-  <div class="container">
-    <div class="site-footer">
+  <div class="clearfix">
+    <div class="site-footer clearfix">
       <ul class="site-footer-links right">
         <li>QQ交流群:  235352162</li>
       </ul>
       <ul class="site-footer-links">
         <li>© 2014 <span title="pp2code">pp2code</span>, Inc.</li>
       </ul>
-    </div><!-- /.site-footer -->
+    </div>
   </div>
 
   <%= yield :template_js %>

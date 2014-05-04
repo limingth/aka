@@ -1,11 +1,3 @@
-.web-video-container {
-  float: left;
-  width: 400px;
-}
-.web-shell-container {
-  float: right;
-  width: 720px;
-}
 #toggle-video {
   position: absolute;
   padding: 5px 10px;
@@ -13,11 +5,45 @@
   top: -35px;
   outline: none;
 }
+
+#wrapper, .container, .web-video-container, .web-shell-container, #web-shell {
+  height: 100%;
+  overflow: hidden;
+}
+
+#wrapper {
+  padding-top: 49px;
+  padding-bottom: 50px;
+}
+
+.web-video-container, .web-shell-container {
+  position: absolute;
+  top: 0;
+  padding-top: 52px;
+}
+
+.web-video-container {
+  width: 400px;
+  left: 0;
+}
+
+.web-shell-container {
+  width: 720px;
+  right: 0;
+}
+h2.header {
+  margin-top: -52px;
+}
+
 #web-video {
   width: 360px;
-  height: 540px;
 }
+
 #web-shell {
-  width: 720px;
-  height: 540px;
+  width: 100%;
+}
+
+#localVideo, #remoteVideo {
+  width:192px; 
+  height:240px;
 }

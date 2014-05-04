@@ -1,3 +1,10 @@
+.container {
+  width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
+  position: relative;
+}
+
 #header {
   background-color: #FAFAFA;
   background: -moz-linear-gradient(#fafafa, #eaeaea);
@@ -8,6 +15,7 @@
   border-bottom: 1px solid #CACACA;
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4),0 0px 10px rgba(0, 0, 0, 0.1);
   overflow: hidden;
+  margin-top: -49px;
 }
 
 .site-logo {
@@ -55,22 +63,6 @@
   cursor: pointer;
   &:focus {
     outline: 0;
-  }
-}
-
-/* sticky footer */
-#wrapper {
-  min-height:100%;
-  margin-bottom:-30px;
-  height: auto !important;
-  height: 100%;
-  &:after {
-    content: "";
-    display: block;
-  }
-  #footer-push {
-    height:10px;
-    clear:both;
   }
 }
 

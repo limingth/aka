@@ -12,8 +12,9 @@ html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, ol, ul, li {
   vertical-align: baseline;
 }
 
-html {
+html, body{
   height: 100%;
+  overflow: hidden;
 }
 
 body {
@@ -54,12 +55,6 @@ hr {
   border: none;
   background: transparent;
   border-bottom: 1px solid #DDD;
-}
-
-.container {
-  width: 1200px;
-  margin-right: auto;
-  margin-left: auto;
 }
 
 .clearfix {
