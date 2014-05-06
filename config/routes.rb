@@ -3,8 +3,7 @@ Aka::Application.routes.draw do
   root :to => 'welcome#index'
 
   get "/try" => 'welcome#try'
-  get "/room_pp" => 'welcome#room_pp'
-  get "/room_2code" => 'welcome#room_2code'
+  get "/novnc" => 'welcome#novnc'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

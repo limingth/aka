@@ -1,0 +1,42 @@
+<div class="container">
+  <button id="toggle-video">切换视频显示窗口</button>
+  <div class="toggle-container">
+    <div class="web-video-container">
+      <h2 class="header">一对一视频</h2>
+      <p>
+        <strong>注意:</strong> 请使用chrome 浏览器测试, 可以通过
+        <a href="http://www.google.hk/intl/zh-CN/chrome/" target=_blank>官方站点下载</a>
+        或者通过<a href="http://115.com/lb/5lbdel83i86z" target=_blank>115网盘下载</a>(礼包码：5lbdel83i86z)
+      </p>
+      <div class="web-video">
+        <div id="local">
+          <video id="localVideo" muted="muted" autoplay="autoplay"></video>
+       </div>
+       <div id="remote">
+        <video id="remoteVideo" autoplay="autoplay"></video>
+       </div>
+      </div><!-- end web-video -->
+    </div><!-- end web-video-container -->
+  </div><!-- toggle-container -->
+
+  <div class="web-shell-container">
+    <h2 class="header">结对编程 </h2>
+    <iframe src="http://pp2code.com:6080/vnc.html?host=pp2code.com&port=6080" id="web-shell" name="web-shell" frameborder="1"></iframe>
+  </div>
+</div>
+<script>
+  $(function() {
+    $("#toggle-video").click(function(){
+      var toggle_width = $(".web-shell-container").width() == 720 ? "100%" : "720px";
+
+      if($(".web-video-container").css("display") == "block") {
+        $(".web-video-container").hide();
+      } else {
+        $(".web-video-container").show("slow");
+      }
+
+      $(".toggle-container").animate({width: "toggle"});
+      $('.web-shell-container').animate({width: toggle_width});
+    });
+  });
+</script>

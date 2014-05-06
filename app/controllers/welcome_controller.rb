@@ -5,9 +5,6 @@ class WelcomeController < ApplicationController
   def try
   end
 
-  def room_pp
-  end
-
-  def room_2code
+  def novnc
   end
 end
