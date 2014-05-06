@@ -24,7 +24,7 @@
     } ]
   });  // Initialize a Peer object
   // var roomToken=JSON.stringify({host:serverAddress, id:Utils.getQueryStrings()['roomId']});  // Tokens for join a room.
-  var roomId = "home";
+  var roomId = "p2p";
   var roomToken=JSON.stringify({host:serverAddress, id:roomId});  // Tokens for join a room.
   var localStream = Woogeen.Stream({audio:true,video:true});  // It only initializes a Woogeen.Stream object. Using localStream.init() to initialize stream.
   localStream.addEventListener("access-accepted", function(evt){  // access-accepted event will be triggered when user accepted to use camera/microphone
