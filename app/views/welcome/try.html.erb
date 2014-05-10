@@ -59,23 +59,11 @@
   var serverAddress = 'http://96.126.117.202:8095/webrtc';  // Please change it to signaling server's address.
   var p2p=new Woogeen.Peer({
     iceServers : [ {
-      urls : "turn:61.129.90.140:4478?transport=udp",
+      urls : ["turn:180.153.223.233:19302?transport=udp", "turn:180.153.223.233:19302?transport=tcp"],
       credential : "master",
       username : "woogeen"
     }, {
-      urls : "turn:61.129.90.140:443?transport=udp",
-      credential : "master",
-      username : "woogeen"
-    }, {
-      urls : "turn:61.129.90.140:4478?transport=tcp",
-      credential : "master",
-      username : "woogeen"
-    }, {
-      urls : "turn:61.129.90.140:443?transport=tcp",
-      credential : "master",
-      username : "woogeen"
-    }, {
-      urls : "stun:61.129.90.140"
+      urls : "stun:61.129.90.140:19302"
     } ]
   });  // Initialize a Peer object
   // var roomToken=JSON.stringify({host:serverAddress, id:Utils.getQueryStrings()['roomId']});  // Tokens for join a room.
