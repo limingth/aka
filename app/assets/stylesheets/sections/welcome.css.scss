@@ -24,14 +24,23 @@
 }
 
 .web-video-container {
-  width: 140px;
+  width: 400px;
   left: 0;
 }
 
 .web-shell-container {
-  width: 1050px;
+  width: 720px;
   right: 0;
 }
+
+.web-video-container.novnc {
+  width: 140px;
+}
+
+.web-shell-container.novnc {
+  width: 1050px;
+}
+
 h2.header {
   margin-top: -52px;
 }
