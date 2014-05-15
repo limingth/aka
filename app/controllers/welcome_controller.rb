@@ -7,4 +7,7 @@ class WelcomeController < ApplicationController
 
   def novnc
   end
+
+  def classroom
+  end
 end

@@ -4,6 +4,7 @@ Aka::Application.routes.draw do
 
   get "/try" => 'welcome#try'
   get "/novnc" => 'welcome#novnc'
+  get "/classroom" => 'welcome#classroom'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
