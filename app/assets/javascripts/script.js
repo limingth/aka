@@ -1,4 +1,4 @@
-var serverUrl = "/classroom";
+var serverUrl = "/";
 var localStream, room;
 var conference = document.getElementById('conference');
 var dataEvent;
