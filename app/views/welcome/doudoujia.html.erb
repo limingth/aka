@@ -6,7 +6,7 @@
       <div class="web-video">
         <div id="messenger"></div>
         <div id="conference">
-          <div id="myVideo" style="width:60px; height:60px;">
+          <div id="myVideo" style="width:120px; height:120px;">
           </div>
         </div>
       </div><!-- end web-video -->
@@ -154,7 +154,7 @@
         var stream = streamEvent.stream;
         var attr = stream.getAttributes() || {};
         if (!attr.width || !attr.height) {
-          attr = {width:60, height:60};
+          attr = {width:120, height:120};
         }
         var div = document.createElement('div');
         div.setAttribute("style", "width: "+attr.width+"px; height: "+attr.height+"px;");
