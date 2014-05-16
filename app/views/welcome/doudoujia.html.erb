@@ -2,11 +2,10 @@
   <button id="toggle-video">切换视频显示窗口</button>
   <div class="toggle-container">
     <div class="web-video-container novnc">
-      <h2 class="header">视频</h2>
       <div class="web-video">
         <div id="messenger"></div>
         <div id="conference">
-          <div id="myVideo" style="width:120px; height:72px;">
+          <div id="myVideo" style="width:120px; height:90px;">
           </div>
         </div>
       </div><!-- end web-video -->
@@ -14,7 +13,6 @@
   </div><!-- toggle-container -->
 
   <div class="web-shell-container novnc">
-    <h2 class="header">结对编程 </h2>
     <iframe src="http://pp2code.com:6080/vnc.html?host=pp2code.com&port=6080" id="web-shell" name="web-shell" frameborder="1"></iframe>
   </div>
 </div>
@@ -154,7 +152,7 @@
         var stream = streamEvent.stream;
         var attr = stream.getAttributes() || {};
         if (!attr.width || !attr.height) {
-          attr = {width:120, height:72};
+          attr = {width:120, height:90};
         }
         var div = document.createElement('div');
         div.setAttribute("style", "width: "+attr.width+"px; height: "+attr.height+"px;");
