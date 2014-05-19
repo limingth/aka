@@ -10,4 +10,8 @@ class WelcomeController < ApplicationController
 
   def doudoujia
   end
+
+  def classroom
+    render :layout => 'no_header_footer'
+  end
 end

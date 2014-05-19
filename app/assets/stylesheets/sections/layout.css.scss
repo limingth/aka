@@ -93,3 +93,28 @@
   display: inline-block;
   line-height: 16px;
 }
+
+#contentwrapper{
+float: left;
+width: 100%;
+}
+
+#contentcolumn{
+margin: 0 200px 0 180px; /*Margins for content column. Should be "0 RightColumnWidth 0 LeftColumnWidth*/
+}
+
+#leftcolumn{
+float: left;
+width: 180px; /*Width of left column in percentage*/
+margin-left: -100%;
+}
+
+#rightcolumn{
+float: left;
+width: 200px; /*Width of right column in pixels*/
+margin-left: -200px; /*Set margin to that of -(RightColumnWidth)*/
+}
+
+#maincontainer, #contentwrapper, #contentcolumn, #leftcolumn, #rightcolumn {
+  height: 100%;
+}
