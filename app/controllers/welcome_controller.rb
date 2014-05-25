@@ -1,4 +1,5 @@
 class WelcomeController < ApplicationController
+  layout 'no_header_footer', :only => [:classroom, :classroom2]
   def index
   end
 
