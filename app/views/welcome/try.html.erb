@@ -59,17 +59,16 @@
   var serverAddress = 'http://96.126.117.202:8095/webrtc';  // Please change it to signaling server's address.
   var p2p=new Woogeen.Peer({
     iceServers : [ {
-      urls : ["turn:180.153.223.233:4478?transport=udp", "turn:180.153.223.233:4478?transport=tcp"],
+      urls : ["turn:96.126.117.202:3478?transport=udp","turn:96.126.117.202:3478?transport=tcp"],
       credential : "master",
-      username : "woogeen"
+      username : "aka"
     }, {
-      urls : "stun:180.153.223.233"
+      urls : "stun:96.126.117.202"
     } ]
   });  // Initialize a Peer object
   // var roomToken=JSON.stringify({host:serverAddress, id:Utils.getQueryStrings()['roomId']});  // Tokens for join a room.
   var roomId = $('#roomid').val();
   var roomToken=JSON.stringify({host:serverAddress, id:roomId});  // Tokens for join a room.
-  console.log(roomToken);
   var localStream = Woogeen.Stream({audio:true,video:true});  // It only initializes a Woogeen.Stream object. Using localStream.init() to initialize stream.
   localStream.addEventListener("access-accepted", function(evt){  // access-accepted event will be triggered when user accepted to use camera/microphone
     attachMediaStream($('#local video').get(0),localStream.stream)  // Show local stream
