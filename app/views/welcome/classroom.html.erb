@@ -1,39 +1,64 @@
-
-<div id="maincontainer" class="chat">
-  <div id="contentwrapper">
-    <div id="contentcolumn">
-      <iframe src="http://pp2code.com:6080/vnc.html?host=pp2code.com&port=6080" id="web-shell" name="web-shell" ></iframe>
+<%= content_tag "div", id: "maincontainer", class: "maincontainer", data: {username: @username} do %>
+  <div class="contentwrapper">
+    <div class="contentcolumn">
+      <ul id="tabs-contents">
+        <li>
+          <div class="content">
+            <iframe src="http://pp2code.com:6080/vnc.html?host=pp2code.com&port=6080" class="web-shell" name="web-shell" ></iframe>
+          </div>
+        </li> <!-- end li -->
+        <li>
+          <div class="content">
+            <iframe src="http://pp2code.com:6200/" class="web-shell" name="web-shell"></iframe>
+          </div>
+        </li> <!-- end li -->
+        <li>
+          <div class="content">
+            <iframe src="http://maodou.io:1337/" class="web-shell" name="web-shell" ></iframe>
+          </div>
+        </li> <!-- end li -->
+      </ul>
     </div>
   </div>
 
-  <div id="leftcolumn">
+  <div class="leftcolumn">
     <div class="logo">
       <a href="/">毛豆网</a>
     </div>
-    <ul class="tabs" id="tabs">
-      <li  class="selected">
-        <a class="open" href="http://web.pp2code.com/event/52804793">
-          <span class="public">I know HTML(How To Meet Ladies)</span>
-        </a>
-      </li>
+    <ul id="tabs-titles">
+      <li class="tooltip current" data-title="<%= t("classroom.noVNC") %>"><i class="fa fa-desktop"></i></li>
+      <li class="tooltip" data-title="<%= t("classroom.terminal") %>"><i class="fa fa-terminal"></i></li>
+      <li class="tooltip" data-title="<%= t("classroom.whiteboard") %>"><i class="fa fa-pencil-square-o"></i></li>
     </ul>
-  </div>
 
-  <div id="rightcolumn">
+  </div> <!-- end leftcolumn -->
+
+  <div class="rightcolumn">
     <div id="messenger"></div>
     <div id="conference">
-      <div id="myVideo" style="width:120px; height:90px;">
-      </div>
+      <div id="livevideo"></div>
     </div>
   </div>
+<% end %> <!-- end maincontainer -->
 
-</div>
+<script>
+  var tabs = $('#tabs-titles li'); //grab tabs
+  var contents = $('#tabs-contents li'); //grab contents
+
+  tabs.bind('click',function(){
+    contents.hide(); //hide all contents
+    tabs.removeClass('current'); //remove 'current' classes
+    $(contents[$(this).index()]).show(); //show tab content that matches tab title index
+    $(this).addClass('current'); //add current class on clicked tab title
+  });
+</script>
 
 <script>
   var serverUrl = "/";
   var localStream, room;
   var conference = document.getElementById('conference');
   var dataEvent;
+  var username = $('#maincontainer').data('username');
 
   function getParameterByName(name) {
     name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
@@ -127,6 +152,7 @@
       var req = new XMLHttpRequest();
       var url = serverUrl + 'createToken/';
       var body = {username: userName, role: role, room: room};
+      console.log("=====================================" + #{body.username})
 
       req.onreadystatechange = function () {
         if (req.readyState === 4) {
@@ -197,7 +223,7 @@
       room.connect();
 
       if (localStream) {
-        localStream.show("myVideo", {muted: 'muted'});
+        localStream.show("livevideo", {muted: 'muted'});
       }
     };
 
