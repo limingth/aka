@@ -2,3 +2,8 @@ zh-CN:
   about_pp2code: "关于pp2code"
   blog: "博客"
   about: "关于我们"
+  classroom:
+    room_not_exist: "教室不存在，请确认您输入教室的链接正确"
+    noVNC: "共享屏幕"
+    terminal: "终端"
+    whiteboard: "涂鸦板"
