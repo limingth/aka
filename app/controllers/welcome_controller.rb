@@ -1,5 +1,5 @@
 class WelcomeController < ApplicationController
-  layout 'no_header_footer', :only => [:classroom, :classroom2]
+  layout 'no_header_footer', :only => [:classroom]
   def index
   end
 
@@ -13,6 +13,6 @@ class WelcomeController < ApplicationController
   end
 
   def classroom
-    render :layout => 'no_header_footer'
+    @username = "liujiyang"
   end
 end

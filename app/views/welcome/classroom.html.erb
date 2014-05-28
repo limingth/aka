@@ -152,7 +152,6 @@
       var req = new XMLHttpRequest();
       var url = serverUrl + 'createToken/';
       var body = {username: userName, role: role, room: room};
-      console.log("=====================================" + #{body.username})
 
       req.onreadystatechange = function () {
         if (req.readyState === 4) {
