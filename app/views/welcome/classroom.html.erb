@@ -1,4 +1,4 @@
-<%= content_tag "div", id: "maincontainer", class: "maincontainer", data: {username: @username} do %>
+<div class="maincontainer">
   <div class="contentwrapper">
     <div class="contentcolumn">
       <ul id="tabs-contents">
@@ -39,7 +39,7 @@
       <div id="livevideo"></div>
     </div>
   </div>
-<% end %> <!-- end maincontainer -->
+</div> <!-- end maincontainer -->
 
 <script>
   var tabs = $('#tabs-titles li'); //grab tabs
@@ -58,7 +58,7 @@
   var localStream, room;
   var conference = document.getElementById('conference');
   var dataEvent;
-  var username = $('#maincontainer').data('username');
+  var username = "<%= @username %>";
 
   function getParameterByName(name) {
     name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
@@ -152,6 +152,7 @@
       var req = new XMLHttpRequest();
       var url = serverUrl + 'createToken/';
       var body = {username: userName, role: role, room: room};
+      console.log(body);
 
       req.onreadystatechange = function () {
         if (req.readyState === 4) {
@@ -226,7 +227,7 @@
       }
     };
 
-    createToken("user", "role", targetRoom, function (response) {
+    createToken(username, "role", targetRoom, function (response) {
       var token = response;
       console.log(token);
       room = Woogeen.Room({token: token});
