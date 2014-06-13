@@ -6,7 +6,7 @@ class WelcomeController < ApplicationController
   def try
   end
 
-  def novnc
+  def pproom
   end
 
   def doudoujia

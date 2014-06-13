@@ -3,7 +3,7 @@ Aka::Application.routes.draw do
   root :to => 'welcome#index'
 
   get "/try" => 'welcome#try'
-  get "/novnc" => 'welcome#novnc'
+  get "/pproom" => 'welcome#pproom'
   get "/doudoujia" => 'welcome#doudoujia'
   get "/classroom" => 'welcome#classroom'
   get "/classroom2" => 'welcome#classroom2'
