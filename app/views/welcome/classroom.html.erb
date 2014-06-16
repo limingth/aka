@@ -4,9 +4,15 @@
       <ul id="tabs-contents">
         <li>
           <div class="content">
-            <iframe src="http://pp2code.com:6080/vnc.html?host=pp2code.com&port=6080" class="web-shell" name="web-shell" ></iframe>
+            <iframe src="http://pp2code.com:6080/vnc.html?host=pp2code.com&port=6080&password=maodou&autoconnect=true" class="web-shell" name="web-shell" ></iframe>
           </div>
         </li> <!-- end li -->
+       <li>
+          <div class="content">
+            <iframe src="http://54.200.171.10:6080/vnc.html?host=54.200.171.10&port=6080&password=maodou&autoconnect=true" class="web-shell" name="web-shell" ></iframe>
+          </div>
+        </li> <!-- end li -->
+
         <li>
           <div class="content">
             <iframe src="http://pp2code.com:6200/" class="web-shell" name="web-shell"></iframe>
@@ -14,7 +20,7 @@
         </li> <!-- end li -->
         <li>
           <div class="content">
-            <iframe src="http://maodou.io:1337/" class="web-shell" name="web-shell" ></iframe>
+            <iframe src="http://maodou.io:1337/maodou" class="web-shell" name="web-shell" ></iframe>
           </div>
         </li> <!-- end li -->
       </ul>
@@ -26,7 +32,8 @@
       <a href="/">毛豆网</a>
     </div>
     <ul id="tabs-titles">
-      <li class="tooltip current" data-title="<%= t("classroom.noVNC") %>"><i class="fa fa-desktop"></i></li>
+      <li class="tooltip current" data-title="<%= t("classroom.noVNC") %>"><i class="fa fa-linux"></i></li>
+      <li class="tooltip" data-title="<%= t("classroom.noVNC") %>"><i class="fa fa-windows"></i></li>
       <li class="tooltip" data-title="<%= t("classroom.terminal") %>"><i class="fa fa-terminal"></i></li>
       <li class="tooltip" data-title="<%= t("classroom.whiteboard") %>"><i class="fa fa-pencil-square-o"></i></li>
     </ul>

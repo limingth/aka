@@ -12,7 +12,7 @@
     width: 100%;
   }
   .contentcolumn{
-    margin: 0 200px 0 180px; //Margins for content column. Should be "0 RightColumnWidth 0 LeftColumnWidth
+    margin: 0 120px 0 85px; //Margins for content column. Should be "0 RightColumnWidth 0 LeftColumnWidth
     .web-shell {
       width: 100%;
       height: 100%;
@@ -22,20 +22,20 @@
   }
   .leftcolumn{
     float: left;
-    width: 180px; //Width of left column in px
+    width: 85px; //Width of left column in px
     margin-left: -100%;
   }
   .rightcolumn{
     float: left;
-    width: 200px; //Width of right column in pixels
-    margin-left: -200px; //Set margin to that of -(RightColumnWidth)
+    width: 120px; //Width of right column in pixels
+    margin-left: -120px; //Set margin to that of -(RightColumnWidth)
   }
   .logo {
     position: absolute;
     top: 0;
     left: 0;
     height: 66px;
-    width: 180px;
+    width: 85px;
     background-color: $brand-green;
     border-bottom: 1px solid #86C5AC;
     a {
@@ -44,7 +44,7 @@
       font-weight: bold;
       display: inline-block;
       padding-top: 17px;
-      padding-left: 29px;
+      padding-left: 14px;
       width: 100%;
       height: 100%;
       &:hover {text-decoration: none; }
